@@ -1,2 +1,3 @@
 row,column=map(int,input().split())
-tmp=list(map(int,input().split))w
+tmp=list(map(int,input().split))
+wwww
