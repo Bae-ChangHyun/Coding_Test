@@ -1,7 +1,7 @@
+'''
 tmp,tmp2,sum=[],[],0
 a=input()
 a=[i for i in a]
-# 완전한 괄호인지 확인하는 코드
 for i in a:
     if(tmp==[]):
         tmp.append(i)
@@ -56,5 +56,25 @@ else:
         while(tmp2.count('0')!=0):
             tmp2.remove('0') 
     print(int(tmp2[0]))
+'''
+def f(p):
+    if len(p) == 0 : return 1
+    dic = {'(':')', '[':']'}
+    val, sub, stk = 0, '', []
+
+    for i in p:
+        sub += i
+        if len(stk) > 0 and dic.get(stk[-1], '') == i : 
+            stk.pop()
+        else : 
+            stk.append(i)
+        if len(stk) == 0 : 
+            val += f(sub[1:-1]) * (2 if sub[0] == '(' else 3)
+            sub = ''
+    if len(stk) > 0 : 
+        return 0
+    return val
+print(f(input()))
+
     
             
