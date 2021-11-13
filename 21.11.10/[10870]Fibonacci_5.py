@@ -8,7 +8,8 @@ else:
         pnum.append(pnum[i-2]+pnum[i-1])
     print(pnum[-1])
 '''
-a,b=0,1
+a=0
+b=1
 for i in range(int(input())):
     a,b=a+b,a
 print(a)   
