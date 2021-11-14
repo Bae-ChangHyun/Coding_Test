@@ -74,7 +74,7 @@ def f(p):
     if len(stk) > 0 : 
         return 0
     return val
-print(f(input()))ww
+print(f(input()))
 
     
             
