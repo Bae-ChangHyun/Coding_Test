@@ -19,16 +19,7 @@ else:
             letter.append(j)
         tmp="".join(tmp)
         word.append(tmp)       
-    letter=set(letter)
 
-    for i in combinations(letter,k-5):
-        strA="".join(i)
-        for j in word:
-            if(j in strA):
-                cnt+=1
-    print(cnt)
-
-'''
 result=[0]
 for i in range(len(word),0,-1):
      for j in combinations(word,i):
@@ -43,4 +34,3 @@ for i in range(len(word),0,-1):
      if(len(result)==2):
             break 
 print(result)
-'''
