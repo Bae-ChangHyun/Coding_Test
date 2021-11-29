@@ -1,6 +1,8 @@
+'''
+RuntimeError
 import sys
 n=int(sys.stdin.readline())
-tmp,b=[0]*2000000002,[]
+tmp,b=[0]*2000000001,[]
 board=dict()
 a=list(map(int,sys.stdin.readline().split()))
 for i in a:
@@ -16,3 +18,12 @@ for i in b:
         board[i]=idx
 for i in a:
     print(board[i],end=" ") 
+'''
+import sys
+input =sys.stdin.readline 
+n = int(input())
+arr = list(map(int,input().split())) 
+s = list(sorted(set(arr))) 
+dic={value:index for index,value in enumerate(s)} 
+for i in arr: 
+	print(dic[i],end=" ")
