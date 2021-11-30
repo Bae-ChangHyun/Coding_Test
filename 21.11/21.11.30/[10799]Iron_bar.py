@@ -15,6 +15,7 @@ for i in range(len(tmp)):
                 break
 #print(tmp)
 print(sums)
+"""
 arr = list(input())
 bar = 0 #현재 짝대기 개수
 cnt = 0 # 정답 
@@ -32,19 +33,4 @@ while 1:
         bar-=1
     i+=1
 print(cnt)
-"""
-arr = list(input())
-bar,cnt = 0,0 
-for i in range(len(arr)-1):
-    print(i,cnt,bar)
-    if (arr[i]=='('):
-        if (arr[i+1]==')'):
-            cnt+=bar
-            i+=2
-            continue
-        bar+=1
-        cnt+=1
-    elif (arr[i]==')'):
-        bar-=1
-print(i)
-print(cnt)
+
