@@ -10,3 +10,15 @@ for i in range(len(s)):
             s=s[:i]+chr(tmp)+s[i+1:]
             
 print(s)
+"""
+import codecs
+print(codecs.encode(input(),"rot13"))
+"""
+"""
+def f(c):
+    i=ord(c)
+    if i>96:return chr((i-84)%26+97)
+    if i>64:return chr((i-52)%26+65)
+    return c
+print(''.join(map(f,input())))
+"""
