@@ -1,9 +1,9 @@
+"""
 import sys
 
 n,k=map(int,sys.stdin.readline().split())
-idx=0
+idx,tmp=0,[]
 que,que2=[i for i in range(n,0,-1)],[]
-tmp=[]
 
 while(1):
     if(que==[]):
@@ -28,4 +28,13 @@ for i in range(len(tmp)):
         print(" %d>"%tmp[i],end="")
     else:
         print(" %d"%tmp[i],end=",")
+"""
+n,m=map(int,input().split())
+l=[*range(1,n+1)]
+r=[]
+i=0
+while l:
+    i=(i+m-1)%len(l)
+    r+=[str(l.pop(i))]
+print('<',', '.join(r), '>',sep='')
     
