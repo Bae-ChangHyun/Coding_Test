@@ -15,4 +15,4 @@ while(num!=0):
     word.append(r)
     num//=b
 for i in reversed(word):
-    print(i,end="")
+    print(i,end=" ")
