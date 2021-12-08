@@ -16,7 +16,7 @@ def counts(i, j):
     while i:
         i //= j
         count += i
-    return count
+    return counts
 
 import sys
 
