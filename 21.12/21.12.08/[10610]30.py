@@ -11,5 +11,5 @@ else:
     
 """
 n=int("".join(sorted(input())[::-1]))
-print(n if n%30==0else-1) erase this
+print(n if n%30==0else-1) 
 """
