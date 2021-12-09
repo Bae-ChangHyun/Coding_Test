@@ -23,4 +23,5 @@ else:
         tmp+=str(a)
     print(tmp)
     print(len(tmp)+int(t)-int(tmp))
+    # ing
     
