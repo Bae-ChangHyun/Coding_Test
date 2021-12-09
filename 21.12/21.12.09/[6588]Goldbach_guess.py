@@ -19,3 +19,4 @@ while True:
         B -= 1
     else:
         print("Goldbach's conjecture is wrong.")
+        #why
