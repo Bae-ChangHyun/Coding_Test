@@ -7,7 +7,7 @@ else:
     n=sorted(n,reverse=True)
     for i in n:
         tmp+=str(i)
-    print(int(tmp))this
+    print(int(tmp))thisf
     
 """
 n=int("".join(sorted(input())[::-1]))
