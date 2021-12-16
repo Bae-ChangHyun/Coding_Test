@@ -6,3 +6,11 @@ for i in range(4,12):
 for i in range(n):
     tmp=int(input())
     print(a[tmp])
+
+"""
+dp=[1,2,4]
+for i in range(4,12): 
+    dp.append(sum(dp[-3:]))
+for _ in range(int(input())): 
+    print(dp[int(input())-1])
+"""
