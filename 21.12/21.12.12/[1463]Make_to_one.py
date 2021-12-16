@@ -11,6 +11,16 @@ for i in range(2,n+1):
         tmpb=d[i//3]+1
     tmpc=d[i-1]+1
     d[i]=min(tmpa,tmpb,tmpc)
-    print(i,d[i])
 print(d[n])
+
+"""
+n = int(input())
+li = [0]*(n+1)  # 0,1,2,...,n
+li[1] = 0
+
+for i in range(2,n+1) :
+  li[i] = min((li[i//3]+i%3+1),(li[i//2]+i%2+1))
+
+print(li[n])
+"""
 
