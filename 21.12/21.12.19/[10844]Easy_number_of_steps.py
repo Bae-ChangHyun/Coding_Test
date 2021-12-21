@@ -1,22 +1,15 @@
-def find_cnt(num,cnt,time,n):
-    res=0
-    if(time==n):return cnt
-    if(num==0 or num==9):
-        res+=find_cnt(n+1,cnt*1,time+1,n) 
-    else:
-        tmp=cnt
-        res+=find_cnt(n-1,cnt*2,time+1,n)
-        res+=find_cnt(n+1,tmp*2,time+1,n)
-    
-    return res
+from sys import stdin
 
-n=int(input())
-tmp=0
+n = int(stdin.readline())
+stairs = [[0] * 10 for _ in range(n + 1)]
+stairs[1] = [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 
-for j in range(1,10):
-    tmp+=find_cnt(j,1,1,n)
-    print(j,tmp)
-print(tmp)
-            
-
-    
+for i in range(2, n + 1):
+    # 계단 수가 0으로 끝나는 경우
+    stairs[i][0] = stairs[i - 1][1]
+    # 계단 수가 9로 끝나는 경우
+    stairs[i][9] = stairs[i - 1][8]
+    # 계단 수가 1~8로 끝나는 경우
+    for j in range(1, 9):
+        stairs[i][j] = stairs[i - 1][j - 1] + stairs[i - 1][j + 1]
+print(sum(stairs[n]) % 1000000000)
