@@ -19,8 +19,6 @@ for i in path:
             cost+=city[i[j]][i[j+1]]
         if(cost!=0):
             cost+=city[i[-1]][i[0]]
-            #result=min(cost,result)
-            if(result>cost):
-                result=cost
+            result=min(cost,result)
     cost=0
 print(result)
