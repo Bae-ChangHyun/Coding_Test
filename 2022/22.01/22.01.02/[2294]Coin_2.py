@@ -1,21 +1,15 @@
 import sys
-from itertools import combinations
-input=sys.stdin.readline
+input = sys.stdin.readline
 
-n,k=map(int,input().split())
-coin=[]
-dp=[0 for i in range(k+1)]
-tmp=[]
+N, K = map(int, input().split())
+coins = sorted([int(input()) for _ in range(N)])
 
-for i in range(n):
-    coin.append(int(input()))
-for j in range(1,k+1):
-    for l in coin:
-        if(j-l>=0):
-            tmp.append(dp[j-l])
-    if(tmp==[]):
-        dp[j]=1
-    else:
-        dp[j]=min(tmp)+1
-        tmp=[]
-print(dp[k]) 
+arr = [10001] * (K+1)
+arr[0] = 0
+
+for i in range(N):
+    for j in range(coins[i], K+1):
+        arr[j] = min(arr[j], arr[j-coins[i]] + 1)
+
+arr[-1] = arr[-1] if arr[-1] != 10001 else -1
+print(arr[-1])

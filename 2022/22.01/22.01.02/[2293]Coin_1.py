@@ -13,4 +13,4 @@ for i in range(len(coin)):
     for j in range(0,k+1):
         if(j-coin[i]>=0):
             dp[j]+=dp[j-coin[i]]
-print(dp[k]) 
+print(dp[k])
