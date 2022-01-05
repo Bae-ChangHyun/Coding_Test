@@ -1,5 +1,6 @@
 n = int(input())
 L = set([i*i for i in range(1, 224)])
+
 if n in L:
     print(1)
     exit()
