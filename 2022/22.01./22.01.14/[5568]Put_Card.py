@@ -4,9 +4,7 @@ input=sys.stdin.readline
 
 n=int(input())
 k=int(input())
-card=[]
-result=set()
-tmp=""
+card,result,tmp=[],set(),""
 
 for i in range(n):
     card.append(int(input()))
@@ -14,7 +12,6 @@ for i in range(n):
 for i in permutations(card,k):
     for j in i:
         tmp+=str(j)
-    print(tmp)
     result.add(int(tmp))
     tmp=""
 print(len(result))
