@@ -9,6 +9,7 @@ for i in range(101):
         for k in range(101):
             dp[i][j].append([0])
 
+dp[20][20][20]=1048576
 for i in range(-50,51,1):
     for j in range(-50,51,1):
         for k in range(-50,51,1):
@@ -19,10 +20,11 @@ for i in range(-50,51,1):
             elif (i < j and j < k):
                 dp[i][j][k]=dp[i][j][k-1]+dp[i][j-1][k-1]-dp[i][j-1][k]
             else:
-                dp[i][j][k]=dp[i-1][j][k]+dp[i-1][j-1][k]+dp[i-1][j][k-1]- dp[i-1][j-1][k-1]
+                dp[i][j][k]=dp[i-1][j][k]+dp[i-1][j-1][k]+dp[i-1][j][k-1]-dp[i-1][j-1][k-1]
 while(1):
     tmp=list(map(int,input().split()))
     if(tmp==[-1,-1,-1]):
         break
     else:
-        print("w(%d, %d, %d) = %d"%(tmp[0],tmp[1],tmp[2],dp[tmp[0]][tmp[1]][tmp[2]]))
+        print("w({0}, {1}, {2}) = {3}".format(tmp[0],tmp[1],tmp[2],dp[tmp[0]][tmp[1]][tmp[2]]))
+        
