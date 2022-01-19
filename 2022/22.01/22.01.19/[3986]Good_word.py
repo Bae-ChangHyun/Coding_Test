@@ -15,7 +15,7 @@ for i in range(n):
                 stack.pop()
             else:
                 stack.append(k)
-        print(stack)
+        #print(stack)
         
     if(stack==[]):cnt+=1
 print(cnt)
