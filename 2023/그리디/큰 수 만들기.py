@@ -1,4 +1,5 @@
-# [모범답안]
+
+#! [모범답안]
 # def solution(number, k):
 #     stack = []
 #     for num in number:

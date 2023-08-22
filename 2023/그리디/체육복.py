@@ -1,4 +1,5 @@
-# [모범답안]
+
+#! [모범답안]
 # def solution(n, lost, reserve):
 #     _reserve = [r for r in reserve if r not in lost]
 #     _lost = [l for l in lost if l not in reserve]
