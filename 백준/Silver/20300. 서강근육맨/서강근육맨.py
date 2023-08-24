@@ -1,15 +1,16 @@
 import sys
-input=sys.stdin.readline
+input = sys.stdin.readline
 
 n=int(input())
-loss=list(map(int,input().split()))
-tmp=[]
+health=list(map(int, input().split()))
+health.sort()
+answer=[]
 
-loss.sort()
-
-if(n%2==1):
-    tmp.append(loss[-1])
-    loss=loss[:-1]
-for i in range(len(loss)//2):
-        tmp.append(loss[i]+loss[len(loss)-1-i])
-print(max(tmp))
+if(n%2==0):
+    for i in range(0,n//2):
+        answer.append(health[i]+health[n-1-i])
+else:
+    answer.append(health[-1])
+    for i in range(n//2):
+        answer.append(health[i]+health[n-2-i])
+print(max(answer))
