@@ -1,12 +1,14 @@
 import sys
 input=sys.stdin.readline
 
+n = int(input())
+left,right = 1,n
 
-n=int(input())
-a=1
-answer=0
-while(1):
-    answer+=a
-    if(answer>n):break
-    a+=1
-print(a-1)
+while left <= right:
+    mid = (left + right) // 2
+    if mid * (mid + 1) // 2 <= n:
+        answer = mid
+        left = mid + 1
+    else:
+        right = mid - 1
+print(answer)
