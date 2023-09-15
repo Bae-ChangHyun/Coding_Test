@@ -4,7 +4,7 @@
 
 ### 성능 요약
 
-메모리: 29200 KB, 시간: 68 ms
+메모리: 31388 KB, 시간: 44 ms
 
 ### 분류
 
@@ -16,7 +16,7 @@
 
 <p>아래 그림은 2×17 직사각형을 채운 한가지 예이다.</p>
 
-<p style="text-align: center;"><img alt="" src="" style="height:59px; width:380px"></p>
+<p style="text-align: center;"><img alt="" src="https://www.acmicpc.net/upload/images/t2n2122.gif" style="height:59px; width:380px"></p>
 
 ### 입력 
 
