@@ -1,16 +1,15 @@
 import sys
-input=sys.stdin.readline
+
+input = sys.stdin.readline
 
 n=int(input())
-num=list(map(int,input().split()))
-dp=[1 for _ in range(n)]
+dp=[0]*n
+dp[0]=1
+array=list(map(int,input().split()))
 
-for i in range(n):
-    tmp=num[i]
-    array=[0]
-    for j in range(i):
-        if(num[j]<tmp):
-            array.append(dp[j])
-    dp[i]=max(array)+1
-#print(dp)
+for i in range(1,n):
+    tmp=[dp[j] for j in range(n) if(array[j]<array[i])]
+    if(tmp==[]):tmp.append(0)
+    dp[i]=max(tmp)+1
 print(max(dp))
+    
