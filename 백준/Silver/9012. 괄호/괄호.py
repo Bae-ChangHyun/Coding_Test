@@ -1,20 +1,20 @@
 import sys
-n=int(sys.stdin.readline())
-check=[]
+
+n = int(sys.stdin.readline().strip())
 
 for i in range(n):
-    tmp=sys.stdin.readline().rstrip()
-    tmp=[i for i in tmp]
-    for j in tmp:
-        if(check==[]):
-            check.append(j)
-        else:
-            if(check[-1]=="(" and j==")"):
-                check=check[:-1]
+    stack = []
+    temp = sys.stdin.readline().strip()
+    for j in range(len(temp)):
+        if len(stack)>0:
+            last = stack[-1]
+            if temp[j] == ")" and last == "(":
+                stack.pop()
             else:
-                check.append(j)
-    if(check==[]):
-            print("YES")
+                stack.append(temp[j])
+        else:
+            stack.append(temp[j])
+    if len(stack) == 0:
+        print("YES")
     else:
-            print("NO")
-    check=[]
+        print("NO")
