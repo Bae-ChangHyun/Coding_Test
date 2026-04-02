@@ -1,26 +1,28 @@
 import sys
 input = sys.stdin.readline
 
-N = int(input())
-bud = list(map(int, input().split()))
-M = int(input())
+n = int(input())
+requests = list(map(int, input().split()))
+m = int(input())
 
-# 전체 요청액이 예산 이하이면 최대 요청액을 그대로 출력
-if sum(bud) <= M:
-    print(max(bud))
+# 전체 요청액이 예산 이하이면 그대로 지급
+if sum(requests) <= m:
+    print(max(requests))
     sys.exit(0)
 
-low, high = 0, max(bud)
-answer = 0
+def find_cap(arr, limit):
+    start, end = 0, max(arr)          # 가능한 상한값 범위
+    answer = 0
 
-while low <= high:
-    mid = (low + high) // 2          # 현재 후보 상한값
-    total = sum(min(b, mid) for b in bud)   # 상한값을 적용했을 때의 합
+    while start <= end:
+        mid = (start + end) // 2
+        total = sum(min(x, mid) for x in arr)
 
-    if total <= M:                   # 예산을 초과하지 않으면 더 크게 시도
-        answer = mid
-        low = mid + 1
-    else:                            # 초과하면 상한값을 낮춘다
-        high = mid - 1
+        if total <= limit:            # 현재 mid 로도 예산을 초과하지 않음
+            answer = mid              # 후보 저장
+            start = mid + 1           # 더 큰 값을 시도
+        else:
+            end = mid - 1             # 중간값이 너무 큼
+    return answer
 
-print(answer)
+print(find_cap(requests, m))
